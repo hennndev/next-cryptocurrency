@@ -44,7 +44,7 @@ const CryptoDetail = ({crypto}) => {
             <h2 className="mt-16 text-xl mb-2">{crypto.name} Market</h2>
             <p>Last Updated: <span>{moment(crypto.market_data.last_updated).startOf('ss').fromNow()}</span></p>
             
-            <div className="mt-5 mb-10 border border-gray-400 dark:border-gray-700 p-4 rounded-md">
+            <div className="mt-5 mb-5 border border-gray-400 dark:border-gray-700 p-4 rounded-md">
                 <p className="text-lg mb-5">currency USD</p>
                 <div className="flex justify-between mb-2">
                     <p>Current price </p>
@@ -122,7 +122,7 @@ const CryptoDetail = ({crypto}) => {
                     <p className="text-green-500 ml-2">{millify(crypto.market_data.total_volume.usd || 0)}</p>
                 </div>
             </div>
-            <button className="flex items-center cursor-pointer hover:text-blue-600" onClick={() => router.push('/')}>
+            <button className="flex items-center cursor-pointer hover:text-blue-600 mb-16" onClick={() => router.push('/')}>
                 <ArrowLeftIcon className="h-5 mr-2"/>
                 Back Homepage
             </button>

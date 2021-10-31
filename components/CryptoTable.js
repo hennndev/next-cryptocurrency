@@ -24,24 +24,24 @@ const CryptoTable = ({cryptoData}) => {
             <tbody>
                 {cryptoData.map(crypto => (
                     <tr className="border-b border-gray-300 dark:border-gray-800 cursor-pointer" key={crypto.id} onClick={() => router.push(`/${crypto.id}`)}>
-                        <td className="pr-10 md:pr-0 flex items-center py-5">
+                        <td className="pr-8 md:pr-0 flex items-center py-5">
                             <img src={crypto.image} className="h-5 mr-2"/>
                             {crypto.name}
                         </td>
                         
-                        <td className="pr-6 md:pr-0 py-5">{crypto.symbol.toUpperCase()}</td>
-                        <td className={`pr-6 md:pr-0 py-5 ${String(crypto.current_price).includes('-') ? 'text-red-500' : 'text-green-500'}`}>${crypto.current_price}</td>
+                        <td className="py-5">{crypto.symbol.toUpperCase()}</td>
+                        <td className={`py-5 ${String(crypto.current_price).includes('-') ? 'text-red-500' : 'text-green-500'}`}>${crypto.current_price}</td>
                         <td 
-                            className={`pr-6 md:pr-0 py-5 ${String(crypto.price_change_percentage_24h).includes('-') ? 'text-red-500' : 'text-green-500'}`}>
+                            className={`py-5 ${String(crypto.price_change_percentage_24h).includes('-') ? 'text-red-500' : 'text-green-500'}`}>
                             {crypto.price_change_percentage_24h}
                         </td>
-                        <td className={`pr-6 md:pr-0 py-5 ${String(crypto.high_24h).includes('-') ? 'text-red-500' : 'text-green-500'}`}>
+                        <td className={`py-5 ${String(crypto.high_24h).includes('-') ? 'text-red-500' : 'text-green-500'}`}>
                             {crypto.high_24h}
                         </td>
-                        <td className={`pr-6 md:pr-0 py-5 ${String(crypto.low_24h).includes('-') ? 'text-red-500' : 'text-green-500'}`}>
+                        <td className={`py-5 ${String(crypto.low_24h).includes('-') ? 'text-red-500' : 'text-green-500'}`}>
                             {crypto.low_24h}
                         </td>
-                        <td className={`pr-15 md:pr-0 py-5`}>
+                        <td className={`py-5`}>
                             {moment(crypto.last_updated).startOf('ss').fromNow()}
                         </td>
                     </tr>
